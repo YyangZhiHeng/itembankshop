@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+}
+
+.main{
+    display: flex;
+    justify-content:space-around;
+    min-height: 800px;
+}
+
+.header{
+    border-bottom-style: solid;
+    margin: auto;
+    display: flex;
+    justify-content:space-around;
+    padding: 5px;
+    padding: 5px;
+    /*background-color:  #8c939d;*/
+    background-image: url("../images/top3.png");
+}
+.zj{
+    width: 80%;
+}
+img{
+    width: 120px;
+    height: 70px;
+}
+.index{
+    width: 10%;
+    margin: auto;
+}
+.left{
+    padding: 10px;
+
+}
+
+.right{
+    padding: 10px;
+}
+.footer{
+    font-size: 50px;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+p{
+    text-align: center;
+}
+h2{
+    color: #5fff50;
+}
+.zj-left{
+    width: 19%;
+}
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网站展示</title>
+</head>
+<link rel="stylesheet" href="css/element.css">
+<link rel="stylesheet" href="css/show.css">
+<script src="js/vue.js"></script>
+<script src="js/element.js"></script>
+<script src="js/axios.min.js"></script>
+<body>
+<div id="app">
+    <center>
+        <div id="main" >
+            <video width="70%" height="60%" controls="controls" autoplay="autoplay">
+                <source src="videos/1.mp4" type="video/mp4" >
+            </video>
+        </div>
+    </center>
+    <div id="footer">
+        <el-link target="_blank" @click="reLogin()">返回登入</el-link>
+        <el-link type="primary">服务条款</el-link>
+        <el-link type="success">隐私政策</el-link>
+        <el-link type="warning">客服中心</el-link>
+        <el-link type="danger">联系我们</el-link>
+        <el-link type="info">帮助中心</el-link>
+        <el-link type="info" @click="adminLogin()">管理员登录</el-link>
+    </div>
+</div>
+<script type="text/javascript">
+    let app = new Vue({
+        el: "#app",
+        date:{},
+        methods:{
+            reLogin(){
+                location.href="login.html"
+            },
+            adminLogin(){
+                location.href="adminLogin.html"
+            }
+        }
+    })
+</script>
+</body>
+</html>

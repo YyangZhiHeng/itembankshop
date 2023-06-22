@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <link rel="icon" href="images/user-register-ico.png">
+    <link rel="stylesheet" href="css/element.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+<!--脚本文件-->
+<script src="js/vue.js"></script>
+<script src="js/element.js"></script>
+<script src="js/axios.min.js"></script>
+        <div id="app">
+            <div class="header">
+                <div class="h-left">
+                    <img src="images/logo2.png">
+                </div>
+                <div class="h-zj">
+                    <h2>用户注册页面</h2>
+                </div>
+                <div class="h-right">
+                    <img src="images/logo1.png">
+                </div>
+            </div>
+
+            <div class="zj">
+                <div class="zi-top">
+
+                </div>
+                <div class="zj-zj">
+                    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="zj-register" >
+                        <el-form-item label="用户" prop="username" >
+                            <el-input v-model.number="ruleForm.username" placeholder="请输入数字/字母"></el-input>
+                        </el-form-item>
+                        <el-form-item label="密码" prop="password">
+                            <el-input type="password" v-model="ruleForm.password" placeholder="请输入密码" autocomplete="off" show-password></el-input>
+                        </el-form-item>
+                        <el-form-item label="确认密码" prop="checkpass">
+                            <el-input type="password" v-model="ruleForm.checkpass" placeholder="请确认密码" autocomplete="off" show-password></el-input>
+                        </el-form-item>
+                        <el-form-item>
+                            <el-button :plain="true" type="primary"  @click="submitForm">注册</el-button>
+                            <el-button @click="resetForm('ruleForm')">重置</el-button>
+                            <el-button type="primary"  @click="reLogin">点击返回登入</el-button>
+                        </el-form-item>
+                    </el-form>
+                </div>
+                <div class="zi-under">
+
+                </div>
+            </div>
+
+            <div class="footer">
+                <el-link @click="show" target="_blank">关于"面经"面试网</el-link>
+                <el-link type="primary">服务条款</el-link>
+                <el-link type="success">隐私政策</el-link>
+                <el-link type="warning">客服中心</el-link>
+                <el-link type="danger">联系我们</el-link>
+                <el-link type="info">帮助中心</el-link>
+            </div>
+        </div>
+
+<script>
+    let app = new Vue({
+        el: "#app",
+        data() {
+            ruleForm :{
+            }
+            var checkUserName = (rule, value, callback)=>{
+                if (!value){
+                    return callback(new Error('用户名不能为空！'))
+                }
+            };
+            var validatePass = (rule, value, callback) => {
+                if (value === '') {
+                    callback(new Error('请输入密码'));
+                } else {
+                    if (this.ruleForm.checkpass !== '') {
+                        this.$refs.ruleForm.validateField('checkpass');
+                    }
+                    callback();
+                }
+            };
+            var validatePass2 = (rule, value, callback) => {
+                if (value === '') {
+                    callback(new Error('请再次输入密码'));
+                } else if (value !== this.ruleForm.password) {
+                    callback(new Error('两次输入密码不一致!'));
+                } else {
+                    callback();
+                }
+            };
+            return {
+                ruleForm: {
+                    username:'',
+                    password: '',
+                    checkpass: '',
+                },
+                rules: {
+                    username:[{
+                        validator: checkUserName, trigger: 'blur'
+                    }],
+                    password: [
+                        { validator: validatePass, trigger: 'blur' }
+                    ],
+                    checkpass: [
+                        { validator: validatePass2, trigger: 'blur' }
+                    ],
+                }
+            };
+        },
+        methods: {
+            show(){
+              location.href="show.html";
+            },
+            reLogin(){
+                window.location.href="login.html";
+            },
+            //注册用户
+            submitForm(){
+                    axios.post("/toRegister",this.ruleForm)
+                        .then(resp =>{
+                            // if (resp.data){
+                                    if (resp.data==0) {
+                                        this.submitFormLoginError("账号密码不能为空")
+                                        return
+                                    }else if(resp.data==2){
+                                        this.submitFormLoginError("该账号已注册")
+                                        return
+                                    }else if (resp.data==1) {
+                                        this.$message({
+                                            showClose: true,
+                                            message: '注册成功！',
+                                            type: 'success'
+                                        });
+                                    }else if (resp.data==3){
+                                        this.submitFormLoginError("两次密码输入不一样，请重新输入密码")
+                                        return
+                                    } else {
+                                // 登录失败，说明原因，顶部显示
+                                this.$message({
+                                    message: '请输入需要注册的账号和密码',
+                                    showClose: true,
+                                    type: 'error'
+                                });
+                            }
+                        })
+                        .catch(err => {
+                            this.$message({
+                                showClose: false,
+                                message: '两次密码输入不一样，请重新输入密码',
+                                type: 'error'
+                            });
+                            console.log(err);
+                        })
+            },
+            submitFormLoginError(msg) {
+                // 登录失败，说明原因
+                this.$message({
+                    message: msg,
+                    type: 'error'
+                });
+            },
+            //清空注册信息
+            resetForm(formName) {
+                this.$refs[formName].resetFields();
+            }
+        }
+    })
+</script>
+</body>
+</html>

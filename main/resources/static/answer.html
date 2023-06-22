@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>答案</title>
+</head>
+<body>
+<center><h1>功能完善中...</h1></center>
+    <div id="app">
+        <div id="main">
+            <el-table :data="tableData" border style="width: 100%">
+                <el-table-column prop="date" label="题号" width="180"></el-table-column>
+                <el-table-column prop="name" label="问题" width="180"></el-table-column>
+                <el-table-column prop="answer" label="答案">
+                    <template slot-scope="scope">
+                        <el-button @click="clickAnswer()"  type="text" size="small">
+                            点击下载
+                        </el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+        </div>
+        <div id="footer">
+
+        </div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/element.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script type="text/javascript">
+        let app = new Vue({
+            el:"#app",
+            date:{
+                tableDate:{}
+            },
+            methods:{},
+            created(id){
+                axios.post("/findAnswerById/"+id)
+                    .then(resp=>{
+                        this.tableDate = resp.date();
+                    })
+                    .catch(err=>{
+                        console.log(err);
+                    })
+                console.log(id)
+            }
+        })
+    </script>
+</body>
+
+</html>

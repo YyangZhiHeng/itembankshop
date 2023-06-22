@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title >面经面试网</title>
+    <link rel="icon" href="images/logo-lco.png">
+    <link rel="stylesheet" href="css/element.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<script src="js/vue.js"></script>
+<script src="js/element.js"></script>
+<script src="js/axios.min.js"></script>
+<body>
+<div id="app">
+    <div class="header">
+        <div class="h-left">
+            <img src="images/logo2.png">
+        </div>
+        <div class="h-zj">
+            <!--<h2>"面经"面试网登入页面</h2>-->
+        </div>
+        <div class="h-right">
+            <img src="images/logo1.png">
+        </div>
+    </div>
+
+    <div class="zj">
+        <div class="zj-f">
+
+        </div>
+        <div class="zj-z" >
+            <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+                <el-form-item label="账号" prop="username">
+                    <el-input type="username" v-model="ruleForm.username" autocomplete="off" placeholder="请输入账号"></el-input>
+                </el-form-item>
+                <el-form-item label="密码" prop="password">
+                    <el-input type="password" v-model="ruleForm.password" autocomplete="off" show-password placeholder="请输入密码"></el-input>
+                </el-form-item>
+                <el-form-item>
+                    <el-button type="primary" @click="submitForm">登入</el-button>
+                    <el-button type="primary" @click="toRegister">注册</el-button>
+                    <el-button @click="resetForm('ruleForm')">重置</el-button>
+                </el-form-item>
+            </el-form>
+        </div>
+        <div class="zj-r">
+
+        </div>
+
+    </div>
+    <div class="footer">
+        <el-link target="_blank" @click="show">关于"面经"面试网</el-link>
+        <el-link type="primary">服务条款</el-link>
+        <el-link type="success">隐私政策</el-link>
+        <el-link type="warning">客服中心</el-link>
+        <el-link type="danger">联系我们</el-link>
+        <el-link type="info">帮助中心</el-link>
+        <el-link type="info" @click="adminLogin">管理员登录</el-link>
+    </div>
+</div>
+<script>
+    let app = new Vue({
+        el: "#app",
+        data() {
+            var checkUsername = (rule, value, callback)=>{
+                if (value ===''){
+                    callback(new Error('账号不能为空'));
+                    callback();
+                }
+            }
+            var checkPassword = (rule, value, callback) => {
+                if (value === '') {
+                    callback(new Error('请输入密码'));
+                }
+                    callback();
+            };
+            return {
+                ruleForm: {
+                    password: '',
+                    checkPassword: '',
+                    checkUsername:'',
+                    username: ''
+                },
+                rules: {
+                    password: [
+                        { validator: checkPassword, trigger: 'blur' }
+                    ],
+                    username: [
+                        { validator: checkUsername, trigger: 'blur' }
+                    ]
+                }
+            };
+        },
+
+        created(){
+            this.ruleForm.username='';
+            this.resetForm.password='';
+        },
+        methods: {
+            show(){
+              location.href="show.html"
+            },
+            // toRegister(){
+            //      location="register.html"
+            // },
+            //清理登入消息消息
+            resetForm(formName) {
+                this.$refs[formName].resetFields();
+            },
+            //管理员登入页面跳转
+            adminLogin(){
+              location="adminLogin.html"
+            },
+            //跳转注册页面
+            toRegister(){
+                window.location.href="register.html"
+            },
+            //用户登录
+            submitForm(){
+                axios.post("/toLogin",this.ruleForm)
+                    .then(resp=>{
+                    //账号错误，用户不存在
+                    // if (resp.data){
+                        if (resp.data==0){
+                            this.submitFormLoginError("请输入账号密码")
+                            return
+                        }
+                        else if (resp.data==1){
+                            this.submitFormLoginError("账号不存在")
+                            return
+                            //密码错误
+                        }else if (resp.data==2){
+                            this.submitFormLoginError("密码错误")
+                            return
+                        }else if (resp.data==3) {
+                            //登录成功
+                            location="contentList.html"
+                        // }
+                    }else{
+                        //登录失败，说明原因，顶部显示
+                        this.$message({
+                            message: '账号或密码错误，请重新登录',
+                            showClose: true,
+                            type: 'error'
+                        });
+                    }
+                })
+                .catch(err=>{
+                    this.$message({
+                        message: '请输入账号密码',
+                        showClose: true,
+                        type: 'error'
+                    });
+                    console.log(err)
+                })
+            },
+            submitFormLoginError(msg) {
+                // 登录失败，说明原因
+                this.$message({
+                    message: msg,
+                    type: 'error'
+                });
+            }
+        }
+    })
+</script>
+</body>
+</html>

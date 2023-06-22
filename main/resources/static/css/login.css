@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+}
+
+#app {
+    flex-direction: row-reverse;
+}
+.login{
+}
+.header{
+    display: flex;
+    justify-content:space-around;
+    /*background-color:  #8c939d;*/
+    background-image: url("../images/top3.png");
+    background-size: 1903px 86px;
+}
+.header span{
+    margin: auto;
+}
+.header img{
+    width: 181px;
+    height: 127px;
+}
+.footer{
+    background-color: #e2ded8;
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*margin: 5px;*/
+}
+.zj{
+    display: flex;
+    justify-content:space-around;
+    /*margin-top: 10%;*/
+    /*//background-color: #8c939d;*/
+    background-image: url("../images/loginBg.jpg");
+    background-size: 100% 100%;
+    min-height:800px;
+}
+.zj-z{
+    border: #8c939d solid 1px;
+    width: 500px;
+    height: 100%;
+    padding: 10px;
+    margin: 200px 0px 10px 5px;
+    background-color: white;
+
+ }
+
