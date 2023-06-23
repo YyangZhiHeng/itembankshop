@@ -5,4 +5,3 @@
 · 使用Element ui组件+flex风格布局，快速构建了项目页面框架，减少了开发时间
 • 使用vue框架，简化了传统的JS代码编写
 · 使用nginx，用于进行前后端分离开发，降低了开发的耦合性
-· 详情地址：https://github.com/YyangZhiHeng/itembankshop.git
