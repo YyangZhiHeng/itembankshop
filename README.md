@@ -50,8 +50,8 @@ SpringBoot、   Mybatis-plus、Axios、  html5、Vue2、CSS3、   Element UI、f
 <p>首先会发送查询请求，查询账号是否注册，如已注册提示“账号已经注册”</p>
 
 ## 试题搜索页面
-
 ![试题搜索页面](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/main.png)
+<p>页面左边有试题导航菜单，右边可以自己迷糊查询，除整理的试题外，也可以直接调用ChatGpt接口查询其他试题</p>
 
 ## 管理员页面
 
