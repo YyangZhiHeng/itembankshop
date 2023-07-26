@@ -71,4 +71,4 @@ SpringBoot、   Mybatis-plus、Axios、  html5、Vue2、CSS3、   Element UI、f
 ## 调用ChatGpt接口
 
 ![调用ChatGpt接口](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/ChatGPT.png)
-<p>查不到想要的试题信息时，可访问ChatGpt，自行搜索</p>
+<p>查不到想要的试题信息时，点击其他问题，可访问ChatGpt，自行搜索</p>
