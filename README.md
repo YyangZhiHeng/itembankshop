@@ -7,11 +7,12 @@
 <p>如果有账号，输出正确的账号密码即可登入</p>
 
 ## 注册页面
-
 ![注册页面](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/register.png)
 <p>按要求输入真确的账号密码，即可注册</p>
-<p>首先会发送查询请求，查询账号是否注册，如已注册提示“账号已经注册”</p>
 
+### 账号已经注册
+![](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/Reregister.png)
+<p>首先会发送查询请求，查询账号是否注册，如已注册提示“账号已经注册”</p>
 
 ## 试题搜索页面
 
