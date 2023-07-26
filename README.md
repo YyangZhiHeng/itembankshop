@@ -4,7 +4,7 @@
 用户注册登入成功后，即可选择自己需要的面试进行模糊查询。管理员登入成功后在主要负责试题的增删改查 ，用户账号密码的管理等。<br/>
 
 <p>后端框架优化：使用Mybatis-Plus框架，mapper和service层接口，分别继承了封装好的BaseMapper类和IService类，而impl实现类层继承ServiceImpl类实现，省略了传统mapper、service接口、impl实现类方法代码编写，以及xml文件的编写，可以在controller层直接调用封装好的方法即可</p>
-<p>ChatGpt：除自己收集的试题外，其他试题可调用内置ChatGpt接口搜索</p>
+<p>*ChatGpt*：除自己收集的试题外，其他试题可调用内置ChatGpt接口搜索</p>
 <p>资源拦截：使用spring的拦截器定义一个LoginInterConfig配置类，实现WebMvcConfigurer接口，重写相关方法拦截和放行资源，</p>
 <p>访问请求拦截：使用servlet的拦截器，实现servlet的HandlerInterceptor接口，拦截处理用户和管理员相关的登入访问权限请求</p>
 <p>用户登入退出校验：使用session存储、定时清除用户的登入信息，进行登入退出校验</p>
