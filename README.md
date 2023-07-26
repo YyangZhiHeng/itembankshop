@@ -10,20 +10,28 @@ SpringBoot、   Mybatis-plus、Axios、  html5、Vue2、CSS3、   Element UI、f
 除自己收集的试题外，其他试题可调用内置ChatGpt接口搜索<br/>
 **资源拦截:** 
 使用spring的拦截器定义一个LoginInterConfig配置类，实现WebMvcConfigurer接口，重写相关方法拦截和放行资源<br/>
+
 **访问请求拦截:** 
 使用servlet的拦截器，实现servlet的HandlerInterceptor接口，拦截处理用户和管理员相关的登入访问权限请求<br/>
+
 **用户登入退出校验**
 使用session存储、定时清除用户的登入信息，进行登入退出校验<br/>
+
 **加密保存账号信息** 
 采用AES算法+IO流，把用户密码加密保存到项目文件中<br/>
+
 **面试题导出** 
 使用POI实现SXSSFWorkbook工具类，以excel格式导出面试题<br/>
+
 **安全认证**
 使用Security对管理员的登入进行安全验证，验证通过后才可登入管理员账号<br/>
+
 **前端框架优化**
 使用element ui框架+flex布局快速构建页面整体框架，极大程度简化了CSS样式编写调试<br/>
+
 **前后端分离**
 使用nginx服务器进行前后端分离开发，可以单独启动前端页面，访问静态资源<br/>
+
 **部署**
 阿里云服务器、Xshell、宝塔面板<br/>
 
