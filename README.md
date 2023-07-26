@@ -11,8 +11,7 @@
 ![注册页面](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/register.png)
 <p>按要求输入真确的账号密码，即可注册</p>
 <p>首先会发送查询请求，查询账号是否注册，如已注册提示“账号已经注册”</p>
-![账号已经注册](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/Reregister.png)
-
+![]((https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/Reregister.png)
 ## 试题搜索页面
 
 ![试题搜索页面](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/main.png)
