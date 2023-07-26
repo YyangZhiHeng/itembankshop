@@ -56,15 +56,19 @@ SpringBoot、   Mybatis-plus、Axios、  html5、Vue2、CSS3、   Element UI、f
 ## 管理员页面
 
 ![管理员页面](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/admin.png)
+<p>管理员可以修改自己的密码</p>
 
 ## 编辑用户
 
 ![编辑用户](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/edituser.png)
+<p>管理员可以修改用户的密码，也可以添加一个新的账户</p>
 
 ## 编辑试题
 
 ![编辑试题](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/edititem.png)
+<p>管理员可以在此添加修改试题信息</p>
 
 ## 调用ChatGpt接口
 
 ![调用ChatGpt接口](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/ChatGPT.png)
+<p>查不到想要的试题信息时，可访问ChatGpt，自行搜索</p>
