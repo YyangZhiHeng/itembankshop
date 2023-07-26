@@ -1,6 +1,6 @@
 登入页面
 
-![](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/login.png)
+![登入页面](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/login.png)
 
 注册页面
 
