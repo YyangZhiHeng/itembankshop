@@ -39,7 +39,7 @@ SpringBoot、   Mybatis-plus、Axios、  html5、Vue2、CSS3、   Element UI、f
 
 ## 登入页面
 ![登入页面](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/login.png)
-<p>如果有账号，输出正确的账号密码即可登入</p>
+<p>如果有账号，输入正确的账号密码即可登入</p>
 
 ## 注册页面
 ![注册页面](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/register.png)
