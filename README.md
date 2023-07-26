@@ -10,10 +10,10 @@ SpringBoot、   Mybatis-plus、Axios、  html5、Vue2、CSS3、   Element UI、f
 **ChatGpt:** 
 除自己收集的试题外，其他试题可调用内置ChatGpt接口搜索<br/>
 
-**资源拦截:** 
+**资源拦截：** 
 使用spring的拦截器定义一个LoginInterConfig配置类，实现WebMvcConfigurer接口，重写相关方法拦截和放行资源<br/>
 
-**访问请求拦截:** 
+**访问请求拦截：** 
 使用servlet的拦截器，实现servlet的HandlerInterceptor接口，拦截处理用户和管理员相关的登入访问权限请求<br/>
 
 **用户登入退出校验：**
