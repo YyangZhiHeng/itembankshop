@@ -10,7 +10,7 @@ SpringBoot、   Mybatis-plus、Axios、  html5、Vue2、CSS3、   Element UI、f
 **ChatGpt:** 
 除自己收集的试题外，其他试题可调用内置ChatGpt接口搜索<br/>
 
-**数据操纵分类**
+**数据操纵分类:**
 账号、试题操作使用mysq数据库l，试题搜索使用elasticsearch搜索引擎<br/>
 
 **资源拦截：** 
