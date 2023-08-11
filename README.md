@@ -10,6 +10,9 @@ SpringBoot、   Mybatis-plus、Axios、  html5、Vue2、CSS3、   Element UI、f
 **ChatGpt:** 
 除自己收集的试题外，其他试题可调用内置ChatGpt接口搜索<br/>
 
+**数据操纵分类**
+账号、试题操作使用mysq数据库l，试题搜索使用elasticsearch搜索引擎<br/>
+
 **资源拦截：** 
 使用spring的拦截器定义一个LoginInterConfig配置类，实现WebMvcConfigurer接口，重写相关方法拦截和放行资源<br/>
 
@@ -23,7 +26,7 @@ SpringBoot、   Mybatis-plus、Axios、  html5、Vue2、CSS3、   Element UI、f
 采用AES算法+IO流，把用户密码加密保存到项目文件中<br/>
 
 **面试题导出：** 
-使用POI实现SXSSFWorkbook工具类，以excel格式导出面试题<br/>
+使用阿里巴巴的easy excel工具，以excel格式导出面试题<br/>
 
 **安全认证：**
 使用Security对管理员的登入进行安全验证，验证通过后才可登入管理员账号<br/>
