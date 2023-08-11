@@ -7,7 +7,7 @@ SpringBoot、   Mybatis-plus、Axios、  html5、Vue2、CSS3、   Element UI、f
 **后端框架优化：**
 使用Mybatis-Plus框架，mapper和service层接口，分别继承了封装好的BaseMapper类和IService类，而impl实现类层继承ServiceImpl类实现，省略了传统mapper、service接口、impl实现类方法代码编写，以及xml文件的编写，可以在controller层直接调用封装好的方法即可<br/>
 
-**ChatGpt:** 
+**ChatGpt4.0:** 
 除整理收集的试题外，其他试题可调用内置ChatGpt接口搜索<br/>
 
 **数据操纵分类:**
