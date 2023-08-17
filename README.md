@@ -56,6 +56,10 @@ SpringBoot、   Mybatis-plus、Axios、  html5、Vue2、CSS3、   Element UI、f
 ![试题搜索页面](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/main.png)
 <p>页面左边有试题导航菜单，右边可以自己迷糊查询，除整理的试题外，也可以直接调用ChatGpt接口查询其他试题</p>
 
+## elasticserach倒排索引库
+![试题索引库](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/es.png)
+![插入代码](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/esadd.png)
+
 ## 管理员页面
 
 ![管理员页面](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/admin.png)
