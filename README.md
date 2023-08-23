@@ -82,7 +82,8 @@ SpringBoot、Mybatis-plus、Axios、html5、Vue2、CSS3、Element UI、flex布�
 
 ## 把试题导出到excel
 ![试题导出](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/question.png)
-~~~ String path = "C:\\Users\\Administrator\\Downloads\\questions.xls";
+~~~
+        String path = "C:\\Users\\Administrator\\Downloads\\questions.xls";
         List<Bank> list = itBankService.list();
         ExcelWriter excelWriter = EasyExcel.write(path, Bank.class).build();
         WriteSheet sheet = EasyExcel.writerSheet("test").build();
