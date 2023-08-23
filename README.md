@@ -1,5 +1,5 @@
 ## 技术栈：
-SpringBoot、Mybatis-plus、Axios、html5、Vue2、CSS3、Element UI、flex布局、elasticserach<br/>
+SpringBoot、Mybatis-plus、Axios、html5、Vue2、CSS3、Element UI、flex布局、elasticserach、RabbitMQ<br/>
 ## 项目描述： 
 本项目是springboot、mybatis - plus框架开发的一个面试题搜索查看网站，主要分为用户和管  理员两个模块。<br/>
 用户注册登入成功后，即可选择自己需要的面试进行模糊查询。管理员登入成功后在主要负责试题的增删改查 ，用户账号密码的管理等。<br/>
@@ -14,7 +14,10 @@ SpringBoot、Mybatis-plus、Axios、html5、Vue2、CSS3、Element UI、flex布�
 用户、管理员、试题CRUD等写入磁盘的操作使用MySql数据库<br/>
 
 **Elasticsearch：**
-试题的搜索使用ES，操作运行内存，提高搜索速度，对关键字进行高亮显示
+试题的搜索使用ES，操作运行内存，提高搜索速度，对关键字进行高亮显示</br>
+
+**数据同步**
+使用RabbitMQ对MySql数据库的修改请求进行监听，一单数据库修改，消息队列监听到后，立即发送请求修改ES搜索文档</br>
 
 **资源拦截：** 
 使用springMvc的拦截器定义一个LoginInterConfig配置类，实现WebMvcConfigurer接口，重写相关方法拦截和放行资源<br/>
