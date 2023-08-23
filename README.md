@@ -61,7 +61,21 @@ SpringBoot、Mybatis-plus、Axios、html5、Vue2、CSS3、Element UI、flex布�
 
 ## elasticserach倒排索引库
 ![试题索引库](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/es.png)
-![插入代码](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/esadd.png)
+~~~
+//先查询数据库所有数据
+        List<Bank> bankList = itBankService.list();
+        //创建request对象
+        BulkRequest request = new BulkRequest();
+        //准备参数,先通过id插叙到一条java数据对象，再把对象转换为Json格式
+        for (Bank bank : bankList) {
+            request.add(new IndexRequest("bank")//bank：索引库名
+                    .id(String.valueOf(bank.getId()))
+                    .source(JSON.toJSONString(bank),XContentType.JSON));//把bank对象转换为JSon格式
+        }
+        //发送请求
+        client.bulk(request,RequestOptions.DEFAULT);
+        System.out.println("插入成功");
+~~~
 
 ## 管理员页面
 
