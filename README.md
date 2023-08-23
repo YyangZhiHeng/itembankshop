@@ -87,5 +87,6 @@ SpringBoot、Mybatis-plus、Axios、html5、Vue2、CSS3、Element UI、flex布�
         ExcelWriter excelWriter = EasyExcel.write(path, Bank.class).build();
         WriteSheet sheet = EasyExcel.writerSheet("test").build();
         excelWriter.write(list,sheet);
-        excelWriter.finish();~~~
+        excelWriter.finish();
+
 <p>需要试题可以把试题导出到本地文件：C:\Users\Administrator\Downloads目录下</p>
