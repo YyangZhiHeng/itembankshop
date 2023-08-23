@@ -10,17 +10,20 @@ SpringBoot、Mybatis-plus、Axios、html5、Vue2、CSS3、Element UI、flex布�
 **ChatGpt4.0:** 
 除整理收集的试题外，其他试题可调用内置ChatGpt接口搜索<br/>
 
-**数据操纵分类:**
-账号、试题操作使用mysq数据库l，试题搜索使用elasticsearch搜索引擎<br/>
+**MySql数据:**
+用户、管理员、试题CRUD等写入磁盘的操作使用MySql数据库<br/>
+
+**Elasticsearch：**
+试题的搜索使用ES，操作运行内存，提高搜索速度，对关键字进行高亮显示
 
 **资源拦截：** 
-使用spring的拦截器定义一个LoginInterConfig配置类，实现WebMvcConfigurer接口，重写相关方法拦截和放行资源<br/>
+使用springMvc的拦截器定义一个LoginInterConfig配置类，实现WebMvcConfigurer接口，重写相关方法拦截和放行资源<br/>
 
 **访问请求拦截：** 
-使用servlet的拦截器，实现servlet的HandlerInterceptor接口，拦截处理用户和管理员相关的登入访问权限请求<br/>
+使用java web的servlet的拦截器，实现servlet的HandlerInterceptor接口，拦截处理用户和管理员相关的登入访问权限请求<br/>
 
 **用户登入退出校验：**
-使用session存储、定时清除用户的登入信息，进行登入退出校验<br/>
+使用session存储、清除用户的信息，进行登入退出校验<br/>
 
 **加密保存账号信息：** 
 采用AES算法+IO流，把用户密码加密保存到项目文件中<br/>
@@ -38,7 +41,7 @@ SpringBoot、Mybatis-plus、Axios、html5、Vue2、CSS3、Element UI、flex布�
 使用nginx服务器进行前后端分离开发，可以单独启动前端页面，访问静态资源<br/>
 
 **部署：**
-阿里云服务器、Xshell、宝塔面板<br/>
+阿里云实例服务器、域名、域名解析、域名解析绑定、Xshell、宝塔面板<br/>
 
 ## 登入页面
 ![登入页面](https://github.com/YyangZhiHeng/itembankshop/blob/main/picture/login.png)
