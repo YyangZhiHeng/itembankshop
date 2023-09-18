@@ -16,7 +16,7 @@ SpringBoot、Mybatis-plus、Axios、html5、Vue2、CSS3、Element UI、flex布�
 **Elasticsearch：**
 试题的搜索使用ES，操作运行内存，提高搜索速度，对关键字进行高亮显示</br>
 
-**数据同步**
+**数据同步:**
 使用RabbitMQ对MySql数据库的修改请求进行监听，一单数据库修改，消息队列监听到后，立即发送请求修改ES搜索文档</br>
 
 **资源拦截：** 
