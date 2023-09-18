@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class LoginInterConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        System.out.println("拦截资源");
+        System.out.println("拦截资源中");
         registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns("/**") //拦截资源
                 .excludePathPatterns
